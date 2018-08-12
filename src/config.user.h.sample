@@ -1,0 +1,37 @@
+/*
+ User configuration file. Copy this file to config.user.h and add it to your
+ `.gitignore`.
+
+ You only have to `#define` what you want to override, the defaults are shown.
+ If you do not set SSID then all network configuration is skipped.
+ */
+
+#ifndef CONFIG_USER_H_
+#define CONFIG_USER_H_
+
+
+#define APP_NAME "octolight"
+
+#define SSID ""
+#define SSID_PASSWORD ""
+
+#define ENABLE_OTA 1
+#define OTA_PASSPHRASE ""
+
+#define MQTT_HOST ""
+#define MQTT_PORT "1883"
+#define MQTT_USERNAME ""
+#define MQTT_PASSWORD ""
+
+#define ENABLE_WEB_SERVER 1
+
+#define NUM_LEDS 1
+#define DATA_PIN 13
+#define CLK_PIN 14
+#define LED_TYPE APA102
+#define COLOR_ORDER GRB
+
+#define OCTOPRINT_BASE_TOPIC "octoprint/"
+
+
+#endif  /* CONFIG_USER_H_ */
