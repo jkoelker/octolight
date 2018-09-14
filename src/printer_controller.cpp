@@ -40,8 +40,9 @@ void MQTTPrinterController::add_state_color(const std::string &state,
                                             float g,
                                             float b,
                                             float w,
+                                            float bright,
                                             float light_state) {
-    this->state_map_[state] = { r, g, b, w, light_state};
+    this->state_map_[state] = { r, g, b, w, bright, light_state};
 }
 
 
@@ -59,6 +60,7 @@ void MQTTPrinterController::parse_state_change(const JsonObject &root) {
         auto v = ls->get_remote_values();
 
         if (color.state > 0.0f) {
+            v.set_brightness(color.bright);
             v.set_red(color.r / 255.0f);
             v.set_green(color.g / 255.0f);
             v.set_blue(color.b / 255.0f);

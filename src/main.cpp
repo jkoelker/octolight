@@ -45,8 +45,8 @@ void setup() {
     auto printer = new MQTTPrinterController(OCTOPRINT_EVENT_TOPIC,
                                              OCTOPRINT_PROGRESS_TOPIC,
                                              OCTOPRINT_TEMPERATURE_TOPIC);
-    printer->add_state_color("OPERATIONAL", 255, 255, 255, 255, 1.0f);
-    printer->add_state_color("OFFLINE", 0, 0, 0, 0, 0.0f);
+    printer->add_state_color("OPERATIONAL", 255, 255, 255, 255, 0.5f, 1.0f);
+    printer->add_state_color("OFFLINE", 0, 0, 0, 0, 0.0f, 0.0f);
 
     App.register_component(printer);
     App.register_controller(printer);

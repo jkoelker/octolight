@@ -21,6 +21,7 @@ struct color {
     float g;
     float b;
     float w;
+    float bright;
     float state;
 };
 
@@ -36,6 +37,7 @@ class MQTTPrinterController : public StoringController, public MQTTComponent {
                           float g = 0,
                           float b = 0,
                           float w = 0,
+                          float bright = 1.0f,
                           float light_state = 1.0f);
 
      bool is_internal() override;
